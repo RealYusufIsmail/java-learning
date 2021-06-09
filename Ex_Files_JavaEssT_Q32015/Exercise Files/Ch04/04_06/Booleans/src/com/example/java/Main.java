@@ -26,7 +26,7 @@ public class Main {
 
         String sBoolean = "true";
         boolean parsed = Boolean.parseBoolean(sBoolean);
-        System.out.println("Parsed " + parsed);
+        System.out.println("Parsed " + parsed   );
 
 
 
