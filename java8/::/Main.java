@@ -1,0 +1,10 @@
+//The restriction: the class should have the name Main
+public class Main {
+
+	//The start point of your program
+	public static void main(String[] args) {
+		System.out.println("It compiles!"); //It prints "It compiles!"
+
+		//Best option for this seneraro is to use //
+	}
+}
