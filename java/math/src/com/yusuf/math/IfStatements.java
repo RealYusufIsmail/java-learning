@@ -10,6 +10,8 @@ public class IfStatements {
         System.out.println("What is your age");
         int age = scanner.nextInt();
 
+        //int age = 21;
+
         if(age < 18) {
             System.out.println("You can not legally get a job yet");
         } else if(age > 18) {
