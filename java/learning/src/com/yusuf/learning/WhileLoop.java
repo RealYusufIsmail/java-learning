@@ -9,10 +9,18 @@ public class WhileLoop {
         Scanner scanner = new Scanner(System.in);
         String name = "";
 
-        while(name.isBlank()) {
+        /*
+        while(name.isEmpty()) {
+            //isBlank is not in java8 so i am using isEmpty instead.
             System.out.println("Enter your name");
             name = scanner.nextLine();
         }
+         */
+         do{
+            //isBlank is not in java8 so i am using isEmpty instead.
+            System.out.println("Enter your name");
+            name = scanner.nextLine();
+        }while(name.isEmpty());
         //the code will execute continuously until they give there name
         System.out.println("Hello " + name);
     }
