@@ -19,6 +19,8 @@ public class IfStatements {
         } else {
             System.out.println("404 error.");
         }
+        //don't need to use the equal sign since you can get a job at 18
+        // i mean this <=
 
     }
 }
