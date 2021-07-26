@@ -1,4 +1,4 @@
-package com.yusuf.math;
+package com.yusuf.learning;
 
 public class SwapTwoVariables {
     public static void main(String[] args) {

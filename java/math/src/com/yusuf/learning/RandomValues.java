@@ -1,4 +1,4 @@
-package com.yusuf.math;
+package com.yusuf.learning;
 
 import java.util.Random;
 
