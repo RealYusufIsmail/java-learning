@@ -14,6 +14,13 @@ public class ArrayListLearning {
         deserts.add("Vanilla cake");
         deserts.add("cookie cake");
 
+        deserts.set(0, "Sponge cake");
+        //replace chocolate cak with Sponge cake.
+        deserts.remove(2);
+        //removes Vanilla cake.
+        deserts.clear();
+        //clears them all.
+
         for(int i = 0; i < deserts.size(); i++) {
             System.out.println(deserts.get(i));
         }
