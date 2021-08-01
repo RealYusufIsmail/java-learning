@@ -21,14 +21,14 @@ public class TwoDArrayList {
         bakeryList.add("coke");
         bakeryList.add("pepsi");
 
-        System.out.println(bakeryList);
-        System.out.println(drinks);
-
-
         shoppingList.add(bakeryList);
+        shoppingList.add(drinks);
 
         System.out.println(shoppingList);
         //System.out.println(shoppingList.get(0));
-        //gets Cereal since a computer counts from 0. so 0 is Cereal
+        //gets bakeryList since a computer counts from 0. so 0 is bakeryList.
+
+        //System.out.println(shoppingList.get(0).get(0);
+        //gets the 1st item from the bakeryList since a computer counts from 0. so 0 is wheat.
     }
 }
