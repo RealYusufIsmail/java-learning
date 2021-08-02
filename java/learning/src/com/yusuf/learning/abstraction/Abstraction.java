@@ -8,7 +8,6 @@ public class Abstraction {
         //Vehicle vehicle = new Vehicle();
         Car car = new Car();
 
-
         car.go();
     }
 }
