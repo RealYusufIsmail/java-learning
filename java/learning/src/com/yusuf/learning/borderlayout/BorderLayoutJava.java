@@ -10,7 +10,7 @@ public class BorderLayoutJava {
         // 3 common managers
 
         // BorderLayoutJava = 	A BorderLayout places components in five areas: NORTH,SOUTH,WEST,EAST,CENTER.
-        //                  All extra space is placed in the center area.
+        //                      All extra space is placed in the center area.
 
         JFrame frame = new JFrame(); //creates a frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
