@@ -1,6 +1,6 @@
 package learning.access_modifiers.package1;
 
-import com.yusuf.learning.access_modifiers.package2.*;
+import learning.access_modifiers.package2.C;
 
 public class A {
     public static void main(String[] args) {

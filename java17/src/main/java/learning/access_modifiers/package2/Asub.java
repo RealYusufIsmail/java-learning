@@ -1,6 +1,6 @@
 package learning.access_modifiers.package2;
 
-import com.yusuf.learning.access_modifiers.package1.*;
+import learning.access_modifiers.package1.A;
 
 public class Asub extends A {
 
