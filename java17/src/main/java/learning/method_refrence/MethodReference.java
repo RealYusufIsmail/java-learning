@@ -1,8 +1,12 @@
 package learning.method_refrence;
 
+
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MethodReference {
+    private static final Logger logger = LoggerFactory.getLogger(MethodReference.class);
     // operation is implemented using lambda expressions
     interface FuncInter1
     {
@@ -17,25 +21,26 @@ public class MethodReference {
     }
 
     // Performs FuncInter1's operation on 'a' and 'b'
-    private int operate(int a, int b, MethodReference.@NotNull FuncInter1 fobj)
+    private int operate(int a, int b, MethodReference.@NotNull FuncInter1 math)
     {
-        return fobj.operation(a, b);
+        return math.operation(a, b);
     }
     public static void main(String[] args) {
+        logger.isInfoEnabled();
         MethodReference.FuncInter1 add = Integer::sum;
 
         MethodReference.FuncInter1 multiply = (int x, int y) -> x * y;
 
-        MethodReference tobj = new MethodReference();
+        MethodReference math = new MethodReference();
 
-        System.out.println("Addition is " +
-                tobj.operate(9, 10, add));
+        logger.info("Addition is '{}'",
+                math.operate(9, 10, add));
 
-        System.out.println("Multiplication is " +
-                tobj.operate(3, 6, multiply));
+        logger.info("Multiplication is '{}'",
+                math.operate(3, 6, multiply));
 
-        MethodReference.FuncInter2 fobj = message -> System.out.println("Hello "
-                + message);
-        fobj.sayMessage("Yusuf");
+        MethodReference.FuncInter2 run = message -> logger.info("Hello '{}'",
+                message);
+        run.sayMessage("Yusuf");
     }
 }
