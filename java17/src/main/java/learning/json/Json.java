@@ -44,7 +44,7 @@ final class Json {
                 "2018", new BigDecimal(14000));
         staff.setSalary(salary);
         staff.setSkills(Arrays.asList("java", "python", "node", "kotlin"));
-    
+
         return staff;
     }
 }
