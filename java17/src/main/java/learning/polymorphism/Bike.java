@@ -1,9 +1,9 @@
 package learning.polymorphism;
 
-public class Bike extends Vehicle{
+public class Bike extends Vehicle {
 
-    @Override
-    public void go() {
-        System.out.println("The bike is moving");
-    }
+  @Override
+  public void go() {
+    System.out.println("The bike is moving");
+  }
 }

@@ -1,19 +1,19 @@
 package learning.inheritance;
 
 public class Inheritance {
-    public static void main(String[] args) {
-        // inheritance = 	the process where one class acquires,
-        //					the attributes and methods of another.
+  public static void main(String[] args) {
+    // inheritance = the process where one class acquires,
+    // the attributes and methods of another.
 
-        Car car = new Car();
+    Car car = new Car();
 
-        //car.go();
+    // car.go();
 
-        Bicycle bicycle = new Bicycle();
+    Bicycle bicycle = new Bicycle();
 
-        //bicycle.stop();
+    // bicycle.stop();
 
-        System.out.println(car.doors);
-        System.out.println(bicycle.pedals);
-    }
+    System.out.println(car.doors);
+    System.out.println(bicycle.pedals);
+  }
 }

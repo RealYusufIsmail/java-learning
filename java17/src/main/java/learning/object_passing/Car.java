@@ -1,9 +1,9 @@
 package learning.object_passing;
 
 public class Car {
-    String name;
+  String name;
 
-    Car(String name) {
-        this.name = name;
-    }
+  Car(String name) {
+    this.name = name;
+  }
 }
