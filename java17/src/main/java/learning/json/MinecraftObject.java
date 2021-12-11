@@ -2,21 +2,16 @@ package learning.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class JsonObjects {
-  private static final Logger logger = LoggerFactory.getLogger(JsonObjects.class);
+public class MinecraftObject {
   private static final String ITEM = "item";
   private static final String NBT = "nbt";
 
-  public static void main(String[] args) {
+public static void main(String[] args) {
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -32,9 +27,7 @@ public class JsonObjects {
 
   public static @NotNull Minecraft serialize() {
     var minecraft = new Minecraft();
-    minecraft.setItem("test");
-    minecraft.setNbt("{\"test\":\"test\"}");
-    minecraft.setRecipe();
+    minecraft.setRecipe(ITEM, NBT);
     return minecraft;
   }
 }
