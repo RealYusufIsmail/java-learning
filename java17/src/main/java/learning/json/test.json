@@ -1,0 +1,20 @@
+{
+  "item": "item",
+  "result": "result",
+  "test": [
+    "display",
+    "ench",
+    "AttributeModifiers"
+  ],
+  "test2": {
+    "test3": {
+      "test5": [
+        {
+          "id": "1",
+          "lvl": 1
+        }
+      ],
+      "HideFlags": 1
+    }
+  }
+}
