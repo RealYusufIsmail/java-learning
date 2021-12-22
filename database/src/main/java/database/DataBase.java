@@ -1,4 +1,5 @@
 package database;
 
-public class DataBase {
+public final class DataBase {
+
 }

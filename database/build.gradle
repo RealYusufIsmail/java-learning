@@ -10,17 +10,21 @@ repositories {
 
 dependencies {
     //loggers
-    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.0'
-    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.0'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
     //junit
     implementation group: 'junit', name: 'junit', version: '4.13.2'
-    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0.3'
     //Database
     implementation group: 'com.h2database', name: 'h2', version: '2.0.202'
     //jooq
     implementation group: 'org.jooq', name: 'jooq', version: '3.15.5'
     implementation group: 'org.jooq', name: 'jooq-meta', version: '3.15.5'
     implementation group: 'org.jooq', name: 'jooq-codegen', version: '3.15.5'
+    //config
+    implementation group: 'io.github.yusufsdiscordbot', name: 'config', version: '1.0.2'
+    //annotations
+    implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
+    implementation 'org.jetbrains:annotations:23.0.0'
 }
 
 test {
