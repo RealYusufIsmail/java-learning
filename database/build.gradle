@@ -1,5 +1,7 @@
-apply plugin: 'java'
-
+plugins {
+    id 'nu.studer.jooq' version '6.0.1'
+    id 'java'
+}
 
 repositories {
     mavenLocal()
@@ -13,11 +15,7 @@ dependencies {
     //junit
     implementation group: 'junit', name: 'junit', version: '4.13.2'
     //Database
-    implementation group: 'com.h2database', name: 'h2', version: '2.0.202'
-    //jooq
-    implementation group: 'org.jooq', name: 'jooq', version: '3.15.5'
-    implementation group: 'org.jooq', name: 'jooq-meta', version: '3.15.5'
-    implementation group: 'org.jooq', name: 'jooq-codegen', version: '3.15.5'
+    jooqGenerator 'com.h2database:h2:1.4.202'
     //config
     implementation group: 'io.github.yusufsdiscordbot', name: 'config', version: '1.0.2'
     //annotations
@@ -25,37 +23,36 @@ dependencies {
     implementation 'org.jetbrains:annotations:23.0.0'
 }
 
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'org.jooq:jooq-codegen:3.15.5'
-        classpath 'com.h2database:h2:2.0.202'
+jooq {
+    configurations {
+        main {
+            generationTool {
+                logging = org.jooq.meta.jaxb.Logging.WARN
+                jdbc {
+                    driver = 'org.h2.Driver'
+                    url = 'jdbc:h2:file:/Users/YusufIsmail/OneDrive/sqldb/sql'
+                    user = System.getenv('USER') ?: user
+                    password = System.getenv('PASSWORD') ?: password
+                }
+                generator {
+                    name = 'org.jooq.codegen.DefaultGenerator'
+                    strategy {
+                        // use the custom generator strategy
+                        name = 'nu.studer.sample.SampleGeneratorStrategy'
+                    }
+                    database {
+                        name = 'org.jooq.meta.h2.H2Database'
+                        includes = '.*'
+                        excludes = ''
+                    }
+                    target {
+                        packageName = 'database'
+                    }
+                }
+            }
+        }
     }
 }
-
-import org.jooq.codegen.GenerationTool
-import org.jooq.meta.jaxb.*
-
-GenerationTool.generate(new Configuration()
-        .withJdbc(new Jdbc()
-                .withDriver('org.h2.Driver')
-                .withUrl('jdbc:h2:~/test-gradle')
-                .withUser('sa')
-                .withPassword(''))
-        .withGenerator(new Generator()
-                .withDatabase(new Database())
-                .withGenerate(new Generate()
-                        .withPojos(true)
-                        .withDaos(true))
-                .withTarget(new Target()
-                        .withPackageName('org.jooq.example.gradle.db')
-                        .withDirectory('src/main/java'))))
-
-
 
 test {
     useJUnitPlatform()
