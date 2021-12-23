@@ -51,8 +51,8 @@ jooq {
                         fluentSetters = false
                     }
                     target {
-                        packageName = 'io.github.realyusufismail.jooq'
-                        directory = 'build/target/generated-sources'
+                        packageName = 'jooq'
+                        directory = 'build/generated-src'
                     }
                     strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                 }
