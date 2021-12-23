@@ -1,7 +1,7 @@
 import nu.studer.gradle.jooq.JooqEdition
 
 plugins {
-    id 'nu.studer.jooq' version '6.0.1'
+    id "nu.studer.jooq" version "6.0.1"
     id 'java'
 }
 
@@ -29,11 +29,13 @@ jooq {
     edition = JooqEdition.OSS
     configurations {
         main {
+            generateSchemaSourceOnCompilation = true
             generationTool {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc {
                     driver = 'org.h2.Driver'
-                    url = 'jdbc:h2:file:/Users/YusufIsmail/OneDrive/sqldb/sql'
+                    //TODO change to root not user folder
+                    url = 'jdbc:h2:file:/Users/YusufIsmail/Documents/GitHub/java-learning/database/build/sql'
                     user = sqlUser
                     password = sqlPassword
                 }
@@ -46,13 +48,13 @@ jooq {
                     }
                     generate {
                         deprecated = false
-                        records = false
-                        immutablePojos = false
-                        fluentSetters = false
+                        records = true
+                        immutablePojos = true
+                        fluentSetters = true
                     }
                     target {
-                        packageName = 'jooq'
-                        directory = 'build/generated-src'
+                        packageName = 'io.github.realyusufismail.jooq'
+                        directory = 'build/generated-src/jooq/main'
                     }
                     strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                 }
@@ -60,7 +62,9 @@ jooq {
         }
     }
 }
-
+tasks.named('generateJooq').configure {
+    allInputsDeclared = true 
+}
 test {
     useJUnitPlatform()
 }
