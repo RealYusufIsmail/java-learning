@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import static io.github.realyusufismail.jooq.public_.Tables.USERS;
+
 
 public class DataBase {
   private static final Logger LOG = (Logger) org.slf4j.LoggerFactory.getLogger(DataBase.class);
