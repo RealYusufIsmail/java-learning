@@ -25,3 +25,4 @@ run
 .DS_Store
 database/gradle.properties
 .env
+database/target
