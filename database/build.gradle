@@ -52,7 +52,7 @@ jooq {
                     }
                     target {
                         packageName = 'io.github.realyusufismail.jooq'
-                        directory = 'target/generated-sources'
+                        directory = 'build/target/generated-sources'
                     }
                     strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                 }
