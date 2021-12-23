@@ -1,10 +1,11 @@
+import nu.studer.gradle.jooq.JooqEdition
+
 plugins {
     id 'nu.studer.jooq' version '6.0.1'
     id 'java'
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -15,7 +16,7 @@ dependencies {
     //junit
     implementation group: 'junit', name: 'junit', version: '4.13.2'
     //Database
-    jooqGenerator 'com.h2database:h2:1.4.202'
+    jooqGenerator 'com.h2database:h2:1.4.200'
     //config
     implementation group: 'io.github.yusufsdiscordbot', name: 'config', version: '1.0.2'
     //annotations
@@ -24,6 +25,8 @@ dependencies {
 }
 
 jooq {
+    version = '3.15.1'
+    edition = JooqEdition.OSS
     configurations {
         main {
             generationTool {
@@ -31,23 +34,27 @@ jooq {
                 jdbc {
                     driver = 'org.h2.Driver'
                     url = 'jdbc:h2:file:/Users/YusufIsmail/OneDrive/sqldb/sql'
-                    user = System.getenv('USER') ?: user
-                    password = System.getenv('PASSWORD') ?: password
+                    user = sqlUser
+                    password = sqlPassword
                 }
                 generator {
-                    name = 'org.jooq.codegen.DefaultGenerator'
-                    strategy {
-                        // use the custom generator strategy
-                        name = 'nu.studer.sample.SampleGeneratorStrategy'
-                    }
+                    name = 'org.jooq.codegen.JavaGenerator'
                     database {
                         name = 'org.jooq.meta.h2.H2Database'
                         includes = '.*'
                         excludes = ''
                     }
-                    target {
-                        packageName = 'database'
+                    generate {
+                        deprecated = false
+                        records = false
+                        immutablePojos = false
+                        fluentSetters = false
                     }
+                    target {
+                        packageName = 'io.github.realyusufismail.jooq'
+                        directory = 'target/generated-sources'
+                    }
+                    strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                 }
             }
         }
