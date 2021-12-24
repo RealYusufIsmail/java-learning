@@ -35,7 +35,7 @@ jooq {
                 jdbc {
                     driver = 'org.h2.Driver'
                     //TODO change to root not user folder
-                    url = 'jdbc:h2:file:/Users/YusufIsmail/Documents/GitHub/java-learning/database/build/sql'
+                    url = 'jdbc:h2:file:~/datbase/local-db'
                     user = sqlUser
                     password = sqlPassword
                 }
