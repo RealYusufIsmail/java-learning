@@ -16,7 +16,7 @@ dependencies {
     //junit
     implementation group: 'junit', name: 'junit', version: '4.13.2'
     //Database
-    jooqGenerator 'com.h2database:h2:1.4.200'
+    jooqGenerator 'com.h2database:h2:2.0.204'
     //config
     implementation group: 'io.github.yusufsdiscordbot', name: 'config', version: '1.0.2'
     //annotations
