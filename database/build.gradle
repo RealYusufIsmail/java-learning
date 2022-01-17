@@ -18,7 +18,7 @@ dependencies {
     //Database
     jooqGenerator 'com.h2database:h2:1.4.200'
     //config
-    implementation group: 'io.github.yusufsdiscordbot', name: 'config', version: '1.0.2'
+    implementation group: 'io.github.yusufsdiscordbot', name: 'config', version: '1.0.3'
     //annotations
     implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
     implementation 'org.jetbrains:annotations:23.0.0'
