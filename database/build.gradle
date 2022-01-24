@@ -22,6 +22,10 @@ dependencies {
     //annotations
     implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
     implementation 'org.jetbrains:annotations:23.0.0'
+    //spring
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.14'
+    testImplementation group: 'org.springframework', name: 'spring-test', version: '5.3.14'
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.14'
 }
 
 jooq {
@@ -34,8 +38,7 @@ jooq {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc {
                     driver = 'org.h2.Driver'
-                    //TODO change to root not user folder
-                    url = 'jdbc:h2:file:~/datbase/local-db'
+                    url = 'jdbc:h2:~/datbase/local-db'
                     user = sqlUser
                     password = sqlPassword
                 }

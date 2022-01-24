@@ -17,16 +17,17 @@ public class DataBase {
   private static final Logger LOG = (Logger) org.slf4j.LoggerFactory.getLogger(DataBase.class);
 
   public static void main(String[] args) {
-    try (Connection connection = DriverManager.getConnection("jdbc:h2:./database/build/database",
+    try (Connection connection = DriverManager.getConnection("jdbc:h2:~/datbase/local-db",
         BasicConfig.userName(), BasicConfig.password())) {
       DSLContext create = DSL.using(connection);
 
       // language=h2
       Result<Record> records = create.fetch("select id, email from users");
-      for (Record record : records) {
-        String email = record.get(USERS.EMAIL);
-        Integer id = record.get(USERS.ID);
+      for (Record dataBaseRecord : records) {
+        String email = dataBaseRecord.get(USERS.EMAIL);
+        Integer id = dataBaseRecord.get(USERS.ID);
         LOG.info("'{}'" + " " + "'{}'", id, email);
+        System.out.println(id + " " + email);
       }
     } catch (SQLException e) {
       e.printStackTrace();
